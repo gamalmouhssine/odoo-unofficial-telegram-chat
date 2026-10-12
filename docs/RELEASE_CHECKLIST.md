@@ -22,10 +22,11 @@ Status as of 2026-10-13. ✅ done · ⬜ to do before publishing · 🔁 every r
 - ✅ License OPL-1 (`LICENSE`), `COPYRIGHT`, bundled licenses in `lib/LICENSES/`, `lib/VENDORED.md` with sha256 of each library
 - ✅ No NOTICE files required by bundled libraries (checked: Telethon, pyaes, rsa, pyasn1)
 - ✅ Translation template `i18n/telegram_personal_client.pot` — 🔁 regenerate when texts change
-- ⬜ Decide the **price** (manifest `price` + `currency`, EUR or USD, minimum 9 EUR, must be the lowest price anywhere)
+- ✅ **Price** set in the manifest: 79 EUR (above simple personal-messaging connectors at about $39–56, below official-API connectors at about $127 and custom builds from about $199). Must stay the lowest price anywhere.
+- ✅ Repository prepared: `publish/odoo-unofficial-telegram-chat`, branch `19.0`, module at the root (sync with `telegram_dev/sync_to_publish.ps1`)
 - ⬜ Confirm vendor name/website in the manifest (`author`, `website`) and set up support contact on the vendor profile
 - ⬜ Email apps@odoo.com: bundled pure-Python libraries in `lib/` (no executables, nothing downloaded) — ask for confirmation before publishing
-- ⬜ Git repository with branch `19.0`, module at the root; grant read access to `online-odoo` if private; register the repository on apps.odoo.com
+- ⬜ Push to GitHub (private repository `gamalmouhssine/odoo-unofficial-telegram-chat`), grant read access to `online-odoo`, register `ssh://git@github.com/gamalmouhssine/odoo-unofficial-telegram-chat.git#19.0` on apps.odoo.com
 
 ## Every release 🔁
 - Bump `version` (19.0.x.y.z); add a migration script when stored data changes
