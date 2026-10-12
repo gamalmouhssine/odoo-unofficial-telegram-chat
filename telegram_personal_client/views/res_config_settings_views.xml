@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.telegram_personal_client</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="90"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Unofficial Telegram" string="Unofficial Telegram" name="telegram_personal_client">
+                    <block title="Telegram API" name="telegram_api_setting_container">
+                        <setting id="telegram_api_id_setting" string="API ID"
+                                 help="Register your company's app at https://my.telegram.org (API development tools). One API ID serves all users of this database.">
+                            <field name="telegram_api_id" placeholder="1234567"/>
+                        </setting>
+                        <setting id="telegram_api_hash_setting" string="API Hash"
+                                 help="Shown next to the API ID on my.telegram.org. Prefer setting TELEGRAM_API_HASH in the Odoo server's environment so it never enters the database.">
+                            <field name="telegram_api_hash_source"/>
+                            <div class="content-group mt-2" invisible="telegram_api_hash_source == 'env'">
+                                <field name="telegram_api_hash" password="True"
+                                       placeholder="Paste a new API hash (32 characters)"/>
+                            </div>
+                        </setting>
+                        <setting id="telegram_test_dc_setting" string="Test Servers"
+                                 help="Development only. Test servers use separate test accounts; switch off before real users connect.">
+                            <field name="telegram_use_test_dc"/>
+                        </setting>
+                    </block>
+                    <block title="Service" name="telegram_service_setting_container">
+                        <setting id="telegram_engine_setting" string="Telegram Engine"
+                                 help="Runs inside Odoo's scheduled actions and keeps connected accounts online. Keep at least 2 cron workers (Odoo's default).">
+                            <field name="telegram_engine_lastcall"/>
+                        </setting>
+                        <setting id="telegram_session_key_setting" string="Session Encryption"
+                                 help="Recommended: set TELEGRAM_SESSION_KEY (32+ random characters) in the Odoo server's environment, so a copy of the database alone cannot open Telegram sessions.">
+                            <field name="telegram_session_key_source"/>
+                            <div class="text-warning small mt-1" invisible="telegram_session_key_source == 'env'">
+                                Sessions are protected by the database's own secret. Set TELEGRAM_SESSION_KEY for stronger protection.
+                            </div>
+                        </setting>
+                        <setting id="telegram_retention_setting" string="Message Cache"
+                                 help="Messages cached in Odoo older than this many days are deleted every night (0 keeps them). They stay available in Telegram.">
+                            <field name="telegram_message_retention_days"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_telegram_settings" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'module': 'telegram_personal_client', 'bin_size': False}</field>
+    </record>
+</odoo>

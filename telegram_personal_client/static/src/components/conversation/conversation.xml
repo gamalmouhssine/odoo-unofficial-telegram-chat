@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="telegram_personal_client.Conversation">
+        <div class="o_telegram_conversation d-flex flex-column h-100">
+            <header class="d-flex align-items-center gap-2 px-3 py-2 border-bottom">
+                <button type="button" class="btn btn-link px-1 o_telegram_back" title="Back to chats" aria-label="Back to chats"
+                        t-on-click="() => props.onBack()">
+                    <i class="fa fa-arrow-left"/>
+                </button>
+                <img t-if="props.chat.has_avatar" t-att-src="avatarUrl(props.chat)" alt="" class="o_telegram_avatar"/>
+                <span t-else="" class="o_telegram_avatar o_telegram_avatar_initials"
+                      t-att-style="'background-color:' + avatarColor(props.chat.id)" t-out="initials(props.chat.title)"/>
+                <div class="overflow-hidden">
+                    <div class="fw-bold text-truncate" t-out="props.chat.title"/>
+                    <div class="small text-muted">
+                        <t t-if="props.chat.chat_type === 'private'">Private chat</t>
+                        <t t-else="">Group</t>
+                    </div>
+                </div>
+            </header>
+
+            <div class="o_telegram_messages flex-grow-1 overflow-auto px-3 py-2" t-ref="list" t-on-scroll="onScroll">
+                <div class="text-center small text-muted py-2">
+                    <t t-if="props.entry.loadingOlder"><i class="fa fa-circle-o-notch fa-spin me-1" aria-hidden="true"/>Loading…</t>
+                    <t t-elif="!props.entry.hasMore and props.entry.remoteComplete">Beginning of the conversation</t>
+                </div>
+                <div t-if="!props.entry.items.length and !props.entry.loadingOlder" class="text-center text-muted py-5">
+                    No messages yet.
+                </div>
+                <t t-foreach="rows" t-as="row" t-key="row.key">
+                    <div t-if="row.type === 'day'" class="o_telegram_day text-center my-2">
+                        <span class="badge rounded-pill"><t t-if="row.label" t-out="row.label"/><t t-else="">Today</t></span>
+                    </div>
+                    <div t-else="" class="d-flex mb-1" t-att-class="row.message.is_outgoing ? 'justify-content-end' : 'justify-content-start'">
+                        <div class="o_telegram_bubble px-3 py-2" t-att-class="{
+                            'o_outgoing': row.message.is_outgoing,
+                            'o_incoming': !row.message.is_outgoing,
+                            'o_failed': row.message.state === 'failed'}">
+                            <div t-if="row.showSender" class="o_telegram_sender small fw-bold" t-out="row.message.sender_name"/>
+                            <div t-if="row.message.content_type !== 'text'" class="o_telegram_media small mb-1"
+                                 title="Open Telegram to view this content">
+                                <i t-att-class="'fa me-1 ' + (CONTENT_ICONS[row.message.content_type] or 'fa-paperclip')" aria-hidden="true"/>
+                                <t t-out="row.message.content_label or 'Attachment'"/>
+                            </div>
+                            <div t-if="row.message.body" class="o_telegram_body" t-out="row.message.body"/>
+                            <div class="o_telegram_meta small text-end">
+                                <span t-if="row.message.is_edited" class="me-1">edited</span>
+                                <t t-out="formatTime(row.message.date)"/>
+                                <t t-if="row.message.is_outgoing">
+                                    <i t-if="row.message.state === 'pending'" class="fa fa-clock-o ms-1" title="Sending" aria-label="Sending"/>
+                                    <span t-elif="row.message.state === 'failed'" class="ms-1 text-danger" t-att-title="row.message.error_message">
+                                        <i class="fa fa-exclamation-circle" aria-hidden="true"/>
+                                        <a href="#" class="ms-1" t-on-click.prevent="() => props.onRetry(row.message.id)">Retry</a>
+                                    </span>
+                                    <span t-elif="isRead(row.message)" class="ms-1 o_telegram_ticks" title="Read" aria-label="Read">✓✓</span>
+                                    <span t-else="" class="ms-1 o_telegram_ticks" title="Sent" aria-label="Sent">✓</span>
+                                </t>
+                            </div>
+                            <div t-if="row.message.state === 'failed' and row.message.error_message"
+                                 class="small text-danger" t-out="row.message.error_message"/>
+                        </div>
+                    </div>
+                </t>
+            </div>
+
+            <footer class="border-top p-2">
+                <div t-if="!props.chat.can_send" class="text-center text-muted small py-2">
+                    You cannot send messages in this chat.
+                </div>
+                <div t-else="" class="d-flex align-items-end gap-2">
+                    <textarea t-ref="input" class="form-control o_telegram_input" rows="1" maxlength="4096"
+                              placeholder="Write a message…" aria-label="Message"
+                              t-model="composer.text" t-on-keydown="onKeydown"/>
+                    <button type="button" class="btn btn-primary" title="Send" aria-label="Send"
+                            t-att-disabled="!composer.text.trim()" t-on-click="send">
+                        <i class="fa fa-paper-plane"/>
+                    </button>
+                </div>
+            </footer>
+        </div>
+    </t>
+</templates>

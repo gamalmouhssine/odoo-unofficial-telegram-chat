@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="telegram_personal_client.ChatList">
+        <div class="o_telegram_chat_list flex-grow-1 overflow-auto" role="listbox" aria-label="Chats">
+            <div t-if="!props.chats.length" class="p-4 text-center text-muted">No chats found.</div>
+            <button t-foreach="props.chats" t-as="chat" t-key="chat.id" type="button" role="option"
+                    t-att-aria-selected="chat.id === props.selectedId ? 'true' : 'false'"
+                    class="o_telegram_chat_item d-flex align-items-center gap-2 w-100 border-0 text-start px-3 py-2"
+                    t-att-class="{'o_selected': chat.id === props.selectedId}"
+                    t-on-click="() => props.onSelect(chat.id)">
+                <img t-if="chat.has_avatar" t-att-src="avatarUrl(chat)" alt="" class="o_telegram_avatar flex-shrink-0"/>
+                <span t-else="" class="o_telegram_avatar o_telegram_avatar_initials flex-shrink-0"
+                      t-att-style="'background-color:' + avatarColor(chat.id)" t-out="initials(chat.title)"/>
+                <span class="flex-grow-1 overflow-hidden">
+                    <span class="d-flex align-items-baseline gap-1">
+                        <i t-if="chat.chat_type !== 'private'" class="fa fa-users small text-muted" title="Group" aria-label="Group"/>
+                        <span class="fw-bold text-truncate flex-grow-1" t-out="chat.title"/>
+                        <span class="small text-muted flex-shrink-0" t-out="formatListDate(chat.last_message_date)"/>
+                    </span>
+                    <span class="d-flex align-items-center gap-1">
+                        <span class="small text-muted text-truncate flex-grow-1" t-out="chat.last_message_preview"/>
+                        <i t-if="chat.is_pinned and !chat.unread_count" class="fa fa-thumb-tack small text-muted" title="Pinned" aria-label="Pinned"/>
+                        <span t-if="chat.unread_count" class="badge rounded-pill text-bg-primary flex-shrink-0" t-out="chat.unread_count"/>
+                    </span>
+                </span>
+            </button>
+        </div>
+    </t>
+</templates>

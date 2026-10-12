@@ -1,0 +1,145 @@
+// Colors derive from Odoo's variables, so light and dark mode both work
+// (the dark bundle recompiles this file with dark values).
+$o-telegram-outgoing-bg: mix($primary, $o-view-background-color, 18%);
+$o-telegram-incoming-bg: mix($body-color, $o-view-background-color, 6%);
+$o-telegram-hover-bg: mix($body-color, $o-view-background-color, 5%);
+$o-telegram-selected-bg: mix($primary, $o-view-background-color, 14%);
+
+.o_telegram_app {
+    background-color: $o-view-background-color;
+}
+
+.o_telegram_sidebar {
+    width: 340px;
+    flex-shrink: 0;
+}
+
+.o_telegram_notice {
+    max-width: 480px;
+}
+
+.o_telegram_chat_item {
+    background: transparent;
+    color: inherit;
+
+    &:hover {
+        background-color: $o-telegram-hover-bg;
+    }
+
+    &.o_selected {
+        background-color: $o-telegram-selected-bg;
+    }
+}
+
+.o_telegram_avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.o_telegram_avatar_initials {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+.o_telegram_messages {
+    background-color: mix($body-color, $o-view-background-color, 3%);
+}
+
+.o_telegram_bubble {
+    // unquote(): let the browser evaluate CSS min(); Sass cannot mix % and px.
+    max-width: unquote("min(75%, 640px)");
+    border-radius: 12px;
+    word-wrap: break-word;
+
+    &.o_outgoing {
+        background-color: $o-telegram-outgoing-bg;
+        border-bottom-right-radius: 4px;
+    }
+
+    &.o_incoming {
+        background-color: $o-telegram-incoming-bg;
+        border-bottom-left-radius: 4px;
+    }
+
+    &.o_failed {
+        border: 1px solid $danger;
+    }
+}
+
+.o_telegram_body {
+    // Plain text from Telegram: keep line breaks, never interpret HTML.
+    white-space: pre-wrap;
+}
+
+.o_telegram_sender {
+    color: $primary;
+}
+
+.o_telegram_meta,
+.o_telegram_media {
+    opacity: 0.75;
+}
+
+.o_telegram_ticks {
+    letter-spacing: -0.25em;
+}
+
+.o_telegram_day .badge {
+    background-color: $o-telegram-incoming-bg;
+    color: $body-color;
+    font-weight: normal;
+}
+
+.o_telegram_input {
+    resize: none;
+    max-height: 160px;
+}
+
+.o_telegram_back {
+    display: none;
+}
+
+.o_telegram_wizard {
+    width: 100%;
+    max-width: 440px;
+}
+
+.o_telegram_wizard_icon {
+    width: 72px;
+    height: 72px;
+}
+
+.o_telegram_qr {
+    width: 240px;
+    height: 240px;
+    image-rendering: pixelated;
+    // QR codes need a light background to scan, also in dark mode.
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+// Phones: one pane at a time.
+@include media-breakpoint-down(md) {
+    .o_telegram_sidebar {
+        width: 100%;
+    }
+
+    .o_telegram_app.o_telegram_has_chat .o_telegram_sidebar,
+    .o_telegram_app:not(.o_telegram_has_chat) .o_telegram_main {
+        display: none !important;
+    }
+
+    .o_telegram_back {
+        display: inline-block;
+    }
+
+    .o_telegram_bubble {
+        max-width: 88%;
+    }
+}

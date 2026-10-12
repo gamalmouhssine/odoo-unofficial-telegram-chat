@@ -1,0 +1,1611 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* telegram_personal_client
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260421\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-12 23:11+0000\n"
+"PO-Revision-Date: 2026-10-12 23:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/lib/telethon/extensions/html.py:0
+msgid "<blockquote expandable><blockquote>"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_chat.py:0
+msgid "A chat can only be linked to a contact of the same Telegram account."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid "API Hash"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_res_config_settings__telegram_api_hash_source
+msgid "API Hash Status"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid "API ID"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__account_id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_command__account_id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__account_id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__account_id
+msgid "Account"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.ui.menu,name:telegram_personal_client.menu_telegram_accounts
+msgid "Accounts"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_command__action
+msgid "Action"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:res.groups,name:telegram_personal_client.group_telegram_manager
+msgid "Administrator"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__avatar_128
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__avatar_128
+msgid "Avatar"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/contact_panel/contact_panel.xml:0
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "Back to chats"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "Beginning of the conversation"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__body
+msgid "Body"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,help:telegram_personal_client.field_res_config_settings__telegram_message_retention_days
+msgid ""
+"Cached messages older than this are deleted from Odoo (0 keeps them). They "
+"stay available in Telegram."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__can_send
+msgid "Can Send"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:res.groups,comment:telegram_personal_client.group_telegram_user
+msgid "Can connect their own Telegram account and use it inside Odoo."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Cancel"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_chat__chat_type__channel
+msgid "Channel"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__chat_id
+msgid "Chat"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__dialogs_synced_at
+msgid "Chat List Synchronized"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__chat_type
+msgid "Chat Type"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/chat_list/chat_list.xml:0
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__chat_ids
+#: model:ir.ui.menu,name:telegram_personal_client.menu_telegram_chats
+msgid "Chats"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_command__action__check_code
+msgid "Check Login Code"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_command__action__check_password
+msgid "Check Two-Step Password"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__code_delivery
+msgid "Code Sent Via"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__company_id
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.telegram_account_view_search
+msgid "Company"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model,name:telegram_personal_client.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.ui.menu,name:telegram_personal_client.menu_telegram_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Connect your Telegram account"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_account__state__connected
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.telegram_account_view_search
+msgid "Connected"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__connected_since
+msgid "Connected Since"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.telegram_account_view_form
+msgid "Connection"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__contact_id
+msgid "Contact"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Contacting Telegram…"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__contact_ids
+msgid "Contacts"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__contacts_synced_at
+msgid "Contacts Synchronized"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__content_meta
+msgid "Content Meta"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__content_type
+msgid "Content Type"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Continue"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__create_uid
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__create_uid
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_command__create_uid
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__create_uid
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__create_date
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__create_date
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_command__create_date
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__create_date
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__res_config_settings__telegram_session_key_source__database
+msgid "Database secret (weaker)"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__date
+msgid "Date"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid ""
+"Development only. Test servers use separate test accounts; switch off before"
+" real users connect."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.js:0
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.xml:0
+msgid "Disconnect"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.js:0
+msgid "Disconnect Telegram"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_account__state__disconnected
+msgid "Disconnected"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__display_name
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__display_name
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_command__display_name
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__display_name
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_engine__display_name
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_message__content_type__document
+msgid "Document"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.constraint,message:telegram_personal_client.constraint_telegram_account_user_uniq
+msgid "Each user can connect only one Telegram account."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,help:telegram_personal_client.field_telegram_command__payload
+msgid "Encrypted value for the command, if any."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Enter the code"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"Enter the phone number in international format, for example +20 123 456 "
+"7890."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__error_message
+msgid "Error Message"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_message__state__failed
+msgid "Failed"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__first_name
+msgid "First Name"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,help:telegram_personal_client.field_res_config_settings__telegram_use_test_dc
+msgid ""
+"For development only: test servers use separate test accounts (numbers "
+"99966XYYYY)."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.telegram_account_view_form
+msgid "Force Disconnect"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,help:telegram_personal_client.field_res_config_settings__telegram_api_id
+msgid "From https://my.telegram.org, under API development tools."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Go to"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/chat_list/chat_list.xml:0
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_chat__chat_type__basic_group
+msgid "Group"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__has_avatar
+msgid "Has Avatar"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Hint:"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__history_complete
+msgid "History Complete"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__history_loaded
+msgid "History Loaded"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_res_config_settings__id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_command__id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_engine__id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__id
+msgid "ID"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__is_contact
+msgid "In Address Book"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+#: code:addons/telegram_personal_client/models/telegram_message.py:0
+msgid "Invalid request."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__is_deleted
+msgid "Is Deleted"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__is_edited
+msgid "Is Edited"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__is_outgoing
+msgid "Is Outgoing"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__is_pinned
+msgid "Is Pinned"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_res_config_settings__telegram_message_retention_days
+msgid "Keep Cached Messages (days)"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_res_config_settings__telegram_engine_lastcall
+msgid "Last Engine Run"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__last_error
+msgid "Last Error"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__last_error_detail
+msgid "Last Error Detail"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__last_error_retry
+msgid "Last Error Retry"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__last_message_date
+msgid "Last Message Date"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__last_message_preview
+msgid "Last Message Preview"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__last_name
+msgid "Last Name"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__last_read_inbox_key
+msgid "Last Read Inbox Key"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__last_read_outbox_key
+msgid "Last Read Outbox Key"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__write_uid
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__write_uid
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_command__write_uid
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__write_uid
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__write_date
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__write_date
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_command__write_date
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__write_date
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_command__action__load_history
+msgid "Load Older Messages"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+#: code:addons/telegram_personal_client/static/src/components/contact_panel/contact_panel.xml:0
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.xml:0
+msgid "Loading"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "Loading…"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__local_uuid
+msgid "Local Uuid"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_command__action__logout
+msgid "Log Out"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Log in"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Log in with QR code"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Log in with phone number"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__login_attempts
+msgid "Login Attempts"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_command__action__mark_read
+msgid "Mark Chat as Read"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "Message"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid "Message Cache"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid ""
+"Messages cached in Odoo older than this many days are deleted every night (0"
+" keeps them). They stay available in Telegram."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__name
+msgid "Name"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.telegram_account_view_search
+msgid "Needs Attention"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_res_config_settings__telegram_api_hash
+msgid "New API Hash"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/contact_panel/contact_panel.xml:0
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.xml:0
+msgid "New chat"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.actions.act_window,help:telegram_personal_client.action_telegram_account
+msgid "No Telegram account connected yet"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/chat_list/chat_list.xml:0
+msgid "No chats found."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/contact_panel/contact_panel.xml:0
+msgid "No contacts found."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "No messages yet."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__res_config_settings__telegram_api_hash_source__missing
+msgid "Not set"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__partner_id
+msgid "Odoo Contact"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Odoo cannot reach Telegram right now. Please try again in a moment."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.js:0
+msgid ""
+"Odoo will be logged out of your Telegram account and the chats cached in "
+"Odoo will be deleted. Your messages stay in Telegram."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,help:telegram_personal_client.field_telegram_chat__history_loaded
+msgid "Older messages were loaded at least once (the chat was opened)."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__oldest_cached_key
+msgid "Oldest Cached Key"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Only Telegram administrators can disconnect other users' accounts."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_message.py:0
+msgid "Only failed messages can be sent again."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,help:telegram_personal_client.field_telegram_contact__phone
+msgid "Only filled when the person's Telegram privacy settings share it."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_command__action__open_chat
+msgid "Open Chat with Contact"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Open Telegram on your phone."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "Open Telegram to view this content"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/contact_panel/contact_panel.xml:0
+msgid "Opening"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_message__content_type__other
+msgid "Other"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__password_hint
+msgid "Password Hint"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid "Paste a new API hash (32 characters)"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_command__payload
+msgid "Payload"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__phone_masked
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__phone
+msgid "Phone"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_message__content_type__photo
+msgid "Photo"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__photo_available
+msgid "Photo Available"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/chat_list/chat_list.xml:0
+msgid "Pinned"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.xml:0
+msgid "Please ask your administrator to set them up."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Please enter a valid value."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Please enter the code Telegram sent you."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Point your phone at this screen. The code refreshes automatically."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_chat__chat_type__private
+msgid "Private"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "Private chat"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__qr_link
+msgid "Qr Link"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "Read"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_message__state__received
+msgid "Received"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid ""
+"Recommended: set TELEGRAM_SESSION_KEY (32+ random characters) in the Odoo "
+"server's environment, so a copy of the database alone cannot open Telegram "
+"sessions."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid ""
+"Register your company's app at https://my.telegram.org (API development "
+"tools). One API ID serves all users of this database."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_command__res_id
+msgid "Res"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "Retry"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid ""
+"Runs inside Odoo's scheduled actions and keeps connected accounts online. "
+"Keep at least 2 cron workers (Odoo's default)."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Scan with your phone"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_command__action__heartbeat
+msgid "Screen Open"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.xml:0
+msgid "Search chats"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/contact_panel/contact_panel.xml:0
+msgid "Search contacts"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:res.groups,comment:telegram_personal_client.group_telegram_manager
+msgid ""
+"Sees the connection status of the Telegram accounts in their companies. "
+"Cannot read other users' chats, messages or contacts."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.xml:0
+msgid "Select a chat to start messaging."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "Send"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_command__action__send_code
+msgid "Send Login Code"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_command__action__send_message
+msgid "Send Message"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Send code"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__sender_name
+msgid "Sender Name"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__sender_tg_id
+msgid "Sender Telegram ID"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_message__state__pending
+msgid "Sending"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_message__state__sent
+msgid "Sent"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__res_config_settings__telegram_session_key_source__env
+msgid "Server environment (TELEGRAM_SESSION_KEY)"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid "Service"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__session_data
+msgid "Session Data"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid "Session Encryption"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_res_config_settings__telegram_session_key_source
+msgid "Session Encryption Key"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid ""
+"Sessions are protected by the database's own secret. Set "
+"TELEGRAM_SESSION_KEY for stronger protection."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__res_config_settings__telegram_api_hash_source__env
+msgid "Set by environment variable"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.xml:0
+msgid "Set them in Unofficial Telegram › Configuration › Settings."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.actions.act_window,name:telegram_personal_client.action_telegram_settings
+#: model:ir.ui.menu,name:telegram_personal_client.menu_telegram_settings
+msgid "Settings"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Settings › Devices › Link Desktop Device"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid ""
+"Shown next to the API ID on my.telegram.org. Prefer setting "
+"TELEGRAM_API_HASH in the Odoo server's environment so it never enters the "
+"database."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Something went wrong while talking to Telegram. Please try again."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__sort_key
+msgid "Sort Key"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_command__action__start_qr
+msgid "Start QR Login"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__state
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__state
+msgid "State"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.telegram_account_view_search
+msgid "Status"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_message__content_type__sticker
+msgid "Sticker"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__res_config_settings__telegram_api_hash_source__param
+msgid "Stored in Odoo"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_chat__chat_type__supergroup
+msgid "Supergroup"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.xml:0
+msgid "Synchronizing your chats…"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.telegram_account_view_form
+msgid "Telegram"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid "Telegram API"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_res_config_settings__telegram_api_id
+msgid "Telegram API ID"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model,name:telegram_personal_client.model_telegram_account
+msgid "Telegram Account"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.actions.act_window,name:telegram_personal_client.action_telegram_account
+msgid "Telegram Accounts"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model,name:telegram_personal_client.model_telegram_chat
+msgid "Telegram Chat"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__tg_chat_id
+msgid "Telegram Chat ID"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model,name:telegram_personal_client.model_telegram_command
+msgid "Telegram Command"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model,name:telegram_personal_client.model_telegram_contact
+msgid "Telegram Contact"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model,name:telegram_personal_client.model_telegram_engine
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid "Telegram Engine"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model,name:telegram_personal_client.model_telegram_message
+msgid "Telegram Message"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__tg_message_id
+msgid "Telegram Message ID"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__tg_name
+msgid "Telegram Name"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__tg_user_id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__tg_user_id
+msgid "Telegram User ID"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Telegram asked to wait %(seconds)s seconds before trying again."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"Telegram blocked new codes for this number for now. Please try again later."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid ""
+"Telegram client. It is not made by or affiliated with Telegram and uses the "
+"Telegram API."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_contact.py:0
+msgid ""
+"Telegram contact details come from Telegram and cannot be edited in Odoo."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Telegram could not find this chat."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,help:telegram_personal_client.field_telegram_chat__photo_available
+msgid "Telegram has a profile photo for this chat."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Telegram has banned this phone number."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Telegram has frozen this account."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"Telegram limited this account for sending too many messages to people who "
+"are not contacts. Check @SpamBot in Telegram."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Telegram login QR code"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_message.py:0
+msgid "Telegram messages are limited to %(max)s characters."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"Telegram requires a login email for this account. Set it up in the official "
+"Telegram app first, then try again."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Telegram returned an error: %(message)s"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Telegram returned an unexpected error (%(code)s)."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Telegram sent you a login code"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,help:telegram_personal_client.field_telegram_account__session_data
+msgid "Telegram session (authorization key and update state), encrypted."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Telegram will call you with the code"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.actions.server,name:telegram_personal_client.ir_cron_telegram_engine_ir_actions_server
+msgid "Telegram: Engine"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.actions.server,name:telegram_personal_client.ir_cron_telegram_retention_ir_actions_server
+msgid "Telegram: Purge Old Cached Messages"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid "Test Servers"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_message__content_type__text
+msgid "Text"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/res_config_settings.py:0
+msgid "The API ID is the number shown on my.telegram.org."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/res_config_settings.py:0
+msgid "The API hash is the 32-character value shown on my.telegram.org."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "The QR code was not scanned in time. Please start again."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"The Telegram API credentials are invalid. Please contact your administrator."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.xml:0
+msgid "The Telegram API credentials are not configured yet."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"The Telegram API credentials are not configured yet. Please ask your "
+"administrator."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "The account is being disconnected."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_message.py:0
+msgid "The message is empty."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"The saved Telegram session could not be decrypted (the server's session key "
+"changed). Please connect again."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,help:telegram_personal_client.field_telegram_chat__history_complete
+msgid "The whole history is cached: nothing older on Telegram."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"There is no Telegram account for this phone number. Create it in the "
+"official Telegram app first."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"These Telegram API credentials are public sample credentials. Please contact"
+" your administrator."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.constraint,message:telegram_personal_client.constraint_telegram_chat_account_tg_chat_uniq
+msgid "This Telegram chat already exists for this account."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.constraint,message:telegram_personal_client.constraint_telegram_message_chat_tg_message_uniq
+msgid "This Telegram message already exists in this chat."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"This Telegram session was ended, for example from your phone. Please connect"
+" again."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.constraint,message:telegram_personal_client.constraint_telegram_contact_account_tg_user_uniq
+msgid "This Telegram user already exists for this account."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_chat.py:0
+msgid "This chat is not available."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "This code has expired. Please request a new one."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_contact.py:0
+msgid "This contact is not available."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "This is an"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "This login step has expired. Please start again."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.telegram_account_view_form
+msgid ""
+"This logs the user's Telegram account out of Odoo and deletes the chats "
+"cached in Odoo. Their messages stay in Telegram. Continue?"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_message.py:0
+msgid "This message is not available."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.constraint,message:telegram_personal_client.constraint_telegram_message_account_local_uuid_uniq
+msgid "This message was already sent."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "This person has blocked you or you blocked them."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"This phone number is not valid. Use the international format, for example "
+"+20 123 456 7890."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__title
+msgid "Title"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "Today"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid ""
+"Too many attempts. To protect your account, try again in about %(minutes)s "
+"minutes."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_message.py:0
+msgid "Too many messages are waiting to be sent. Please wait a moment."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Two-step verification"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Unknown login method."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.actions.client,name:telegram_personal_client.action_telegram_client
+#: model:ir.ui.menu,name:telegram_personal_client.menu_telegram_root
+#: model:res.groups.privilege,name:telegram_personal_client.res_groups_privilege_telegram
+#: model_terms:ir.ui.view,arch_db:telegram_personal_client.res_config_settings_view_form
+msgid "Unofficial Telegram"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/telegram_app/telegram_app.xml:0
+msgid "Unofficial Telegram client"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__unread_count
+msgid "Unread Count"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_res_config_settings__telegram_use_test_dc
+msgid "Use Telegram Test Servers"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Use the international format. Telegram will send you a login code."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__user_id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_chat__user_id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__user_id
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_message__user_id
+#: model:res.groups,name:telegram_personal_client.group_telegram_user
+msgid "User"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_account__tg_username
+#: model:ir.model.fields,field_description:telegram_personal_client.field_telegram_contact__username
+msgid "Username"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model_terms:ir.actions.act_window,help:telegram_personal_client.action_telegram_account
+msgid ""
+"Users connect their own account from the Unofficial Telegram app. This list "
+"only shows connection status."
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_message__content_type__video
+msgid "Video"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_message__content_type__voice
+msgid "Voice Message"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_account__state__waiting_code
+msgid "Waiting for Code"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_account__state__waiting_password
+msgid "Waiting for Password"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_account__state__waiting_phone
+msgid "Waiting for Phone Number"
+msgstr ""
+
+#. module: telegram_personal_client
+#: model:ir.model.fields.selection,name:telegram_personal_client.selection__telegram_account__state__waiting_qr
+msgid "Waiting for QR Scan"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "We sent the code by SMS"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "We sent the code to your Telegram app on your other devices"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "We sent the code to your login email"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "Write a message…"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Wrong code. Check the code Telegram sent you and try again."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Wrong password."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "You are sending messages too fast. Wait a moment and retry."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid ""
+"You can disconnect at any time: the session is removed from your Telegram "
+"devices and the cached data is deleted from Odoo."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+#: code:addons/telegram_personal_client/models/telegram_message.py:0
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "You cannot send messages in this chat."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_account.py:0
+msgid "Your Telegram account is already connected."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-python
+#: code:addons/telegram_personal_client/models/telegram_message.py:0
+msgid "Your Telegram account is not connected."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid ""
+"Your Telegram session is stored encrypted in this Odoo database. Odoo keeps "
+"a copy of your recent chats and messages; other Odoo users, administrators "
+"included, cannot see them in Odoo. People with direct access to the server "
+"or database are the only exception."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Your account is protected with an additional password."
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "Your phone number"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/conversation/conversation.xml:0
+msgid "edited"
+msgstr ""
+
+#. module: telegram_personal_client
+#. odoo-javascript
+#: code:addons/telegram_personal_client/static/src/components/connect_wizard/connect_wizard.xml:0
+msgid "unofficial"
+msgstr ""

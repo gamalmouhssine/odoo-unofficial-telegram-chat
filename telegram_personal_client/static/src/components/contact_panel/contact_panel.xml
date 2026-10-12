@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="telegram_personal_client.ContactPanel">
+        <div class="o_telegram_contacts d-flex flex-column flex-grow-1 overflow-hidden">
+            <div class="d-flex align-items-center gap-2 px-3 py-2 border-bottom">
+                <button type="button" class="btn btn-link px-1" title="Back to chats" aria-label="Back to chats"
+                        t-on-click="() => props.onClose()">
+                    <i class="fa fa-arrow-left"/>
+                </button>
+                <span class="fw-bold">New chat</span>
+            </div>
+            <div class="p-2 border-bottom">
+                <input type="search" class="form-control" placeholder="Search contacts" aria-label="Search contacts"
+                       t-model="state.search" t-on-input="onSearch"/>
+            </div>
+            <div class="flex-grow-1 overflow-auto">
+                <div t-if="state.loading and !state.contacts.length" class="p-4 text-center text-muted">
+                    <i class="fa fa-circle-o-notch fa-spin" aria-label="Loading"/>
+                </div>
+                <div t-elif="!state.contacts.length" class="p-4 text-center text-muted">No contacts found.</div>
+                <button t-foreach="state.contacts" t-as="contact" t-key="contact.id" type="button"
+                        class="o_telegram_chat_item d-flex align-items-center gap-2 w-100 border-0 text-start px-3 py-2"
+                        t-att-disabled="props.openingId === contact.id"
+                        t-on-click="() => props.onOpen(contact.id)">
+                    <span class="o_telegram_avatar o_telegram_avatar_initials flex-shrink-0"
+                          t-att-style="'background-color:' + avatarColor(contact.id)" t-out="initials(contact.name)"/>
+                    <span class="flex-grow-1 overflow-hidden">
+                        <span class="d-block fw-bold text-truncate" t-out="contact.name"/>
+                        <span class="d-block small text-muted text-truncate">
+                            <t t-if="contact.username">@<t t-out="contact.username"/></t>
+                            <t t-if="contact.partner_name"> · <t t-out="contact.partner_name"/></t>
+                        </span>
+                    </span>
+                    <i t-if="props.openingId === contact.id" class="fa fa-circle-o-notch fa-spin text-muted" aria-label="Opening"/>
+                </button>
+            </div>
+        </div>
+    </t>
+</templates>

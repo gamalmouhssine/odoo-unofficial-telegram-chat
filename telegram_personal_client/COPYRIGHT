@@ -1,0 +1,11 @@
+Unofficial Telegram Chat (telegram_personal_client)
+Copyright (c) 2026 Baam. All rights reserved.
+
+Licensed under the Odoo Proprietary License v1.0 (see LICENSE).
+
+Bundled third-party libraries (lib/) keep their own licenses: Telethon (MIT),
+pyaes (MIT), rsa (Apache-2.0) and pyasn1 (BSD-2-Clause). See lib/VENDORED.md
+and lib/LICENSES/.
+
+Telegram is a trademark of its respective owner. This app is not made by,
+endorsed by or affiliated with Telegram.

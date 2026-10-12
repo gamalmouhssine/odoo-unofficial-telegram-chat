@@ -1,0 +1,113 @@
+<section class="container py-4">
+    <div class="text-center mb-4">
+        <h1 style="font-weight: 700;">Unofficial Telegram Chat</h1>
+        <h4 class="text-muted">Your personal Telegram account, inside Odoo. Private for each user. Nothing else to install.</h4>
+        <p class="mt-3 p-3" style="background-color: #f3f0ff; border-radius: 8px;">
+            <strong>Unofficial client.</strong> This app is not made by or affiliated with Telegram.
+            It uses the Telegram API to connect each user's own Telegram account.
+        </p>
+    </div>
+
+    <div class="text-center mb-5">
+        <img src="screenshot_conversation.png" alt="Chat list and an open conversation in Odoo" class="img-fluid" style="border-radius: 8px; box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);"/>
+    </div>
+
+    <h2 class="mb-3">What it does</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <ul>
+                <li><strong>Each user connects their own account</strong>: by scanning a QR code with their phone, or with phone number, login code and two-step password.</li>
+                <li><strong>Chat list</strong> with search, unread counts, pinned chats and profile photos.</li>
+                <li><strong>Conversations</strong> with private chats and groups: read history (more loads as you scroll), send text, see sent/read ticks.</li>
+                <li><strong>Live</strong>: new messages, edits, deletions and read receipts appear by themselves.</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul>
+                <li><strong>Contacts</strong>: start a chat with anyone in your Telegram address book.</li>
+                <li><strong>Phone-friendly</strong> layout inside the Odoo web app.</li>
+                <li><strong>Runs entirely inside Odoo</strong>: no extra server, no Docker, no Python package to install. Copy the module, install it, enter your API ID.</li>
+                <li><strong>Administrators</strong> see which accounts are connected and can disconnect them (for example when someone leaves the company), without access to anyone's messages.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row my-4">
+        <div class="col-md-4 text-center mb-3">
+            <img src="screenshot_login.png" alt="Login with QR code or phone number" class="img-fluid" style="border-radius: 6px; border: 1px solid #ddd;"/>
+            <p class="small text-muted mt-2">Each user connects their own account</p>
+        </div>
+        <div class="col-md-4 text-center mb-3">
+            <img src="screenshot_contacts.png" alt="Start a chat from Telegram contacts" class="img-fluid" style="border-radius: 6px; border: 1px solid #ddd;"/>
+            <p class="small text-muted mt-2">Start chats from your Telegram contacts</p>
+        </div>
+        <div class="col-md-4 text-center mb-3">
+            <img src="screenshot_phone.png" alt="Conversation on a phone" class="img-fluid" style="border-radius: 6px; border: 1px solid #ddd; max-height: 420px;"/>
+            <p class="small text-muted mt-2">Works on phones too</p>
+        </div>
+    </div>
+
+    <h2 class="mb-3">How it works</h2>
+    <div class="text-center mb-3">
+        <img src="how_it_works.png" alt="Each user's browser talks to Odoo; a scheduled action inside Odoo holds the connection to Telegram" class="img-fluid"/>
+    </div>
+    <ol>
+        <li><strong>The user works in Odoo.</strong> Opening a chat, sending a message or scanning the login QR code is an ordinary Odoo request: Odoo checks that the user may do it, then queues the work.</li>
+        <li><strong>The Telegram engine</strong> is a scheduled action that runs inside your Odoo. It keeps one connection per connected account to Telegram's official servers, picks up queued work within about half a second, and receives new messages, edits and read receipts as they happen.</li>
+        <li><strong>Results are saved in your database</strong>, each record visible only to its owner, and pushed instantly to the user's open screen through Odoo's own live-update channel (the same one Odoo Discuss uses).</li>
+        <li><strong>Sessions are kept</strong> (encrypted), so users stay connected across Odoo restarts and upgrades, just like Telegram Desktop.</li>
+    </ol>
+    <p>No message passes through any third-party server: only your Odoo and Telegram.</p>
+
+    <h2 class="mb-3">Private by design</h2>
+    <ul>
+        <li>Telegram data is visible only to its owner. Other users, Telegram administrators included, cannot read anyone's chats, messages or contacts through Odoo (enforced by record rules, not just hidden in the interface).</li>
+        <li>Telegram sessions are stored encrypted. Set <code>TELEGRAM_SESSION_KEY</code> on your Odoo server and a copy of the database alone cannot open them. Database copies made by Odoo's tools, and neutralized staging databases, drop the sessions.</li>
+        <li>Login codes and passwords are never stored in clear and never written to logs.</li>
+        <li>Disconnecting removes the session from the user's Telegram devices and deletes the cached chats from Odoo. An optional retention period deletes old cached messages automatically.</li>
+        <li>The app collects no data and contacts no server other than Telegram's.</li>
+    </ul>
+    <p class="small text-muted">As with any business application, people with direct access to your server or database are outside of Odoo's permission system.</p>
+
+    <h2 class="mb-3">Behaves like a normal Telegram app</h2>
+    <p>Telegram watches accounts that use third-party apps. This app is built to look like a person using Telegram Desktop:</p>
+    <ul>
+        <li>Every message is sent by a person clicking <em>Send</em>. There is no bulk messaging, auto-reply, scheduling or member scraping, and the app cannot be used for marketing campaigns.</li>
+        <li>Honest status: users appear online only while the Telegram screen is open, and read receipts are sent only when a chat is actually opened.</li>
+        <li>Telegram's rate limits are respected, and login attempts are capped below Telegram's own limits.</li>
+        <li>One connection per account, kept between sessions: no repeated logins.</li>
+    </ul>
+
+    <h2 class="mb-3">Requirements</h2>
+    <ul>
+        <li>Odoo 19.0. Tested on Odoo 19.0 Community (on-premise, single and multi-worker servers).</li>
+        <!-- Before publishing: add Enterprise and Odoo.sh here only once tested (see docs/RELEASE_CHECKLIST.md). -->
+        <li>A free Telegram API ID for your company, from my.telegram.org (API development tools).</li>
+        <li>Outbound internet access from the Odoo server to Telegram.</li>
+        <li>At least 2 cron workers (Odoo's default): the Telegram engine runs as a scheduled action.</li>
+        <li>Not available on Odoo Online (SaaS), which does not allow third-party Python modules.</li>
+    </ul>
+
+    <h2 class="mb-3">Setup in four steps</h2>
+    <ol>
+        <li>Install the app.</li>
+        <li>At my.telegram.org, log in with a company phone number, open <em>API development tools</em> and create an app. Note the API ID and API hash.</li>
+        <li>In Odoo, open <em>Unofficial Telegram › Configuration › Settings</em> and enter them. Recommended: set <code>TELEGRAM_SESSION_KEY</code> in the server environment.</li>
+        <li>Give users the <em>Unofficial Telegram / User</em> access right. Each user opens the app and connects their own account.</li>
+    </ol>
+    <div class="text-center my-4">
+        <img src="screenshot_settings.png" alt="Settings" class="img-fluid" style="border-radius: 6px; border: 1px solid #ddd;"/>
+    </div>
+
+    <h2 class="mb-3">Current limitations</h2>
+    <ul>
+        <li>Photos, files, voice and video messages are shown as labelled placeholders; open Telegram to view them. Sending them is not supported yet.</li>
+        <li>Broadcast channels, secret chats and calls are not shown.</li>
+        <li>The chat list starts with your 100 most recent chats (archived chats excluded); older chats appear as soon as they receive a message.</li>
+        <li>One Telegram account per Odoo user.</li>
+        <li>Some accounts cannot log in from third-party apps (for example when Telegram requires a login email to be set up first in the official app). The app explains what to do in these cases.</li>
+    </ul>
+
+    <h2 class="mb-3">Pricing</h2>
+    <p>Paid app, sold as a one-time purchase on the Odoo Apps Store (one price per Odoo version, no per-user fees). No subscription, no advertising, no data collection, no per-message fees.</p>
+</section>

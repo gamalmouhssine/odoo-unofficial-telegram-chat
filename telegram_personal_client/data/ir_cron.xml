@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!-- noupdate: created at install only. The engine job runs almost all the
+     time while accounts are connected, and Odoo refuses to modify a running
+     job, so module upgrades must never rewrite these records. -->
+<data noupdate="1">
+    <!-- Holds the Telegram connections for about 45 seconds per run and
+         re-schedules itself while accounts are connected. Low priority, so
+         other jobs always run first. -->
+    <record id="ir_cron_telegram_engine" model="ir.cron" forcecreate="True">
+        <field name="name">Telegram: Engine</field>
+        <field name="model_id" ref="model_telegram_engine"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_run()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">minutes</field>
+        <field name="priority">20</field>
+    </record>
+
+    <!-- Message cache retention (Settings): deletes old cached messages. -->
+    <record id="ir_cron_telegram_retention" model="ir.cron" forcecreate="True">
+        <field name="name">Telegram: Purge Old Cached Messages</field>
+        <field name="model_id" ref="model_telegram_message"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_purge_old_messages()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="priority">30</field>
+    </record>
+</data>
+</odoo>

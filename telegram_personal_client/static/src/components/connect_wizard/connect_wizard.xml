@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="telegram_personal_client.ConnectWizard">
+        <div class="o_telegram_wizard card shadow-sm">
+            <div class="card-body p-4">
+                <div t-if="props.status.error" class="alert alert-danger" role="alert" t-out="props.status.error"/>
+                <div t-if="props.status.last_error" class="alert alert-warning" role="status" t-out="props.status.last_error"/>
+                <div t-if="props.status.pending" class="alert alert-info d-flex align-items-center gap-2" role="status">
+                    <i class="fa fa-circle-o-notch fa-spin" aria-hidden="true"/>Contacting Telegram…
+                </div>
+
+                <!-- Intro and consent (Telegram API terms 2.2) -->
+                <t t-if="step === 'disconnected'">
+                    <div class="text-center mb-3">
+                        <img src="/telegram_personal_client/static/description/icon.png" alt="" class="o_telegram_wizard_icon mb-3"/>
+                        <h3>Connect your Telegram account</h3>
+                    </div>
+                    <ul class="text-muted small ps-3">
+                        <li>This is an <strong>unofficial</strong> Telegram client. It is not made by or affiliated with Telegram and uses the Telegram API.</li>
+                        <li>Your Telegram session is stored encrypted in this Odoo database. Odoo keeps a copy of your recent chats and messages; other Odoo users, administrators included, cannot see them in Odoo. People with direct access to the server or database are the only exception.</li>
+                        <li>You can disconnect at any time: the session is removed from your Telegram devices and the cached data is deleted from Odoo.</li>
+                    </ul>
+                    <div class="d-grid gap-2 mt-4">
+                        <button class="btn btn-primary" t-att-disabled="waiting" t-on-click="() => this.start('qr')">
+                            <i class="fa fa-qrcode me-2"/>Log in with QR code
+                        </button>
+                        <button class="btn btn-secondary" t-att-disabled="waiting" t-on-click="() => this.start('phone')">
+                            <i class="fa fa-phone me-2"/>Log in with phone number
+                        </button>
+                    </div>
+                </t>
+
+                <t t-elif="step === 'waiting_qr'">
+                    <h3 class="text-center">Scan with your phone</h3>
+                    <div class="text-center my-3">
+                        <img t-if="props.status.qr_image" t-att-src="props.status.qr_image" alt="Telegram login QR code" class="o_telegram_qr"/>
+                        <i t-else="" class="fa fa-circle-o-notch fa-spin fa-2x text-muted" role="img" aria-label="Loading"/>
+                    </div>
+                    <ol class="small">
+                        <li>Open Telegram on your phone.</li>
+                        <li>Go to <strong>Settings › Devices › Link Desktop Device</strong>.</li>
+                        <li>Point your phone at this screen. The code refreshes automatically.</li>
+                    </ol>
+                    <button class="btn btn-link px-0" t-att-disabled="form.busy" t-on-click="cancel">Cancel</button>
+                </t>
+
+                <form t-elif="step === 'waiting_phone'" t-on-submit.prevent="() => this.submit('phone')">
+                    <h3>Your phone number</h3>
+                    <p class="text-muted small">Use the international format. Telegram will send you a login code.</p>
+                    <input type="tel" class="form-control mb-3" autocomplete="tel" placeholder="+20 123 456 7890"
+                           t-model="form.value" required="required"/>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn btn-link px-0" t-att-disabled="form.busy" t-on-click="cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary" t-att-disabled="waiting">Send code</button>
+                    </div>
+                </form>
+
+                <form t-elif="step === 'waiting_code'" t-on-submit.prevent="() => this.submit('code')">
+                    <h3>Enter the code</h3>
+                    <p class="text-muted small">
+                        <t t-if="codeDestination === 'telegram_app'">We sent the code to your Telegram app on your other devices</t>
+                        <t t-elif="codeDestination === 'sms'">We sent the code by SMS</t>
+                        <t t-elif="codeDestination === 'call'">Telegram will call you with the code</t>
+                        <t t-elif="codeDestination === 'email'">We sent the code to your login email</t>
+                        <t t-else="">Telegram sent you a login code</t>
+                        <t t-if="props.status.phone_masked"> (<t t-out="props.status.phone_masked"/>)</t>.
+                    </p>
+                    <input type="text" class="form-control mb-3" inputmode="numeric" autocomplete="one-time-code"
+                           t-model="form.value" required="required"/>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn btn-link px-0" t-att-disabled="form.busy" t-on-click="cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary" t-att-disabled="waiting">Continue</button>
+                    </div>
+                </form>
+
+                <form t-elif="step === 'waiting_password'" t-on-submit.prevent="() => this.submit('password')">
+                    <h3>Two-step verification</h3>
+                    <p class="text-muted small">
+                        Your account is protected with an additional password.
+                        <t t-if="props.status.password_hint">Hint: <t t-out="props.status.password_hint"/></t>
+                    </p>
+                    <input type="password" class="form-control mb-3" autocomplete="current-password"
+                           t-model="form.value" required="required"/>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn btn-link px-0" t-att-disabled="form.busy" t-on-click="cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary" t-att-disabled="waiting">Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </t>
+</templates>

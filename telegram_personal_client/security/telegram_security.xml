@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_groups_privilege_telegram" model="res.groups.privilege">
+        <field name="name">Unofficial Telegram</field>
+        <field name="sequence">50</field>
+        <field name="category_id" ref="base.module_category_productivity"/>
+    </record>
+
+    <record id="group_telegram_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_telegram"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Can connect their own Telegram account and use it inside Odoo.</field>
+    </record>
+
+    <record id="group_telegram_manager" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_telegram"/>
+        <field name="implied_ids" eval="[(4, ref('group_telegram_user'))]"/>
+        <field name="user_ids" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="comment">Sees the connection status of the Telegram accounts in their companies. Cannot read other users' chats, messages or contacts.</field>
+    </record>
+
+    <!-- Accounts: users see their own; administrators also see the status of
+         accounts in their allowed companies (group rules are OR-ed). -->
+    <record id="rule_telegram_account_own" model="ir.rule">
+        <field name="name">Telegram account: own account</field>
+        <field name="model_id" ref="model_telegram_account"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('group_telegram_user'))]"/>
+    </record>
+
+    <record id="rule_telegram_account_manager" model="ir.rule">
+        <field name="name">Telegram account: accounts of allowed companies</field>
+        <field name="model_id" ref="model_telegram_account"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        <field name="groups" eval="[(4, ref('group_telegram_manager'))]"/>
+    </record>
+
+    <!-- Conversations: global rules (no group) are AND-ed for every user,
+         so no group, administrators included, can read another user's
+         Telegram data through Odoo. Kept updatable on purpose: privacy
+         fixes must reach existing databases on module upgrade. -->
+    <record id="rule_telegram_chat_owner" model="ir.rule">
+        <field name="name">Telegram chat: owner only</field>
+        <field name="model_id" ref="model_telegram_chat"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+    </record>
+
+    <record id="rule_telegram_message_owner" model="ir.rule">
+        <field name="name">Telegram message: owner only</field>
+        <field name="model_id" ref="model_telegram_message"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+    </record>
+
+    <record id="rule_telegram_contact_owner" model="ir.rule">
+        <field name="name">Telegram contact: owner only</field>
+        <field name="model_id" ref="model_telegram_contact"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+    </record>
+</odoo>
